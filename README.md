@@ -2,8 +2,8 @@
 
 Système de timings pour PHP inspiré de [PocketMine-MP](https://github.com/pmmp/PocketMine-MP)
 
-> État actuel : la **base** est posée (collecte + rapport texte). Le format JSON
-> pour le visualiseur web viendra ensuite.
+> État actuel : collecte + rapport texte + **export JSON** (`TimingsExporter`)
+> et un **visualiseur web** autonome (`web/index.html`).
 
 ## Concepts
 

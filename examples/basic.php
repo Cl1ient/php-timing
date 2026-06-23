@@ -5,6 +5,7 @@ declare(strict_types=1);
 require __DIR__ . '/../autoload.php';
 
 use PhpTimings\Timings;
+use PhpTimings\TimingsExporter;
 use PhpTimings\TimingsHandler;
 use PhpTimings\TimingsReport;
 
@@ -31,3 +32,9 @@ for ($tick = 0; $tick < 100; $tick++) {
 }
 
 echo TimingsReport::generate();
+
+// Also export a JSON report for the web viewer (web/index.html).
+$jsonPath = __DIR__ . '/timings.json';
+file_put_contents($jsonPath, TimingsExporter::toJson(JSON_PRETTY_PRINT));
+echo "\nJSON report written to {$jsonPath}\n";
+echo "Open web/index.html and load it.\n";

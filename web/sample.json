@@ -1,0 +1,63 @@
+{
+    "version": 1,
+    "createdAt": 1782518400,
+    "sampleTimeNs": 92000000,
+    "tickDurationLimitNs": 50000000,
+    "records": [
+        {
+            "id": 1,
+            "parentId": null,
+            "name": "Full Tick",
+            "group": "Application",
+            "count": 100,
+            "totalTimeNs": 85000000,
+            "peakTimeNs": 1900000,
+            "violations": 0,
+            "ticksActive": 100
+        },
+        {
+            "id": 2,
+            "parentId": 1,
+            "name": "Database Query",
+            "group": "Database",
+            "count": 100,
+            "totalTimeNs": 52000000,
+            "peakTimeNs": 1200000,
+            "violations": 2,
+            "ticksActive": 100
+        },
+        {
+            "id": 3,
+            "parentId": 1,
+            "name": "Render",
+            "group": "Application",
+            "count": 100,
+            "totalTimeNs": 24000000,
+            "peakTimeNs": 700000,
+            "violations": 0,
+            "ticksActive": 100
+        },
+        {
+            "id": 4,
+            "parentId": 3,
+            "name": "Shadow Pass",
+            "group": "Application",
+            "count": 100,
+            "totalTimeNs": 9000000,
+            "peakTimeNs": 300000,
+            "violations": 0,
+            "ticksActive": 100
+        },
+        {
+            "id": 5,
+            "parentId": 1,
+            "name": "Garbage Collector",
+            "group": "Application",
+            "count": 6,
+            "totalTimeNs": 4000000,
+            "peakTimeNs": 1500000,
+            "violations": 7,
+            "ticksActive": 6
+        }
+    ]
+}
