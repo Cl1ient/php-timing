@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Timings — Report Viewer</title>
+    <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>PHP Timings</h1>
+        <div class="actions">
+            <label class="btn" for="file-input">Load report…</label>
+            <input id="file-input" type="file" accept="application/json,.json" hidden>
+            <button id="paste-btn" class="btn btn-ghost" type="button">Paste JSON</button>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="dropzone" class="dropzone">
+            <p>Drop a timings JSON file here, or use <strong>Load report</strong> / <strong>Paste JSON</strong>.</p>
+            <p class="hint">Generate one with <code>TimingsExporter::toJson()</code>.</p>
+        </section>
+
+        <section id="report" class="report" hidden>
+            <div id="summary" class="summary"></div>
+            <table class="timings">
+                <thead>
+                    <tr>
+                        <th data-sort="name" class="col-name">Name</th>
+                        <th data-sort="count">Count</th>
+                        <th data-sort="totalTimeNs" class="sorted-desc">Total</th>
+                        <th data-sort="percent">%</th>
+                        <th data-sort="avg">Avg</th>
+                        <th data-sort="peakTimeNs">Peak</th>
+                        <th data-sort="violations">Viol.</th>
+                    </tr>
+                </thead>
+                <tbody id="rows"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <dialog id="paste-dialog">
+        <form method="dialog">
+            <h2>Paste timings JSON</h2>
+            <textarea id="paste-area" rows="12" placeholder="{ &quot;version&quot;: 1, ... }"></textarea>
+            <menu>
+                <button value="cancel" class="btn btn-ghost">Cancel</button>
+                <button id="paste-load" value="load" class="btn">Load</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <script src="viewer.js"></script>
+</body>
+</html>
